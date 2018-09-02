@@ -36,3 +36,8 @@ Executing Tests:
 To run test suite,
 select TestRunners.java under folder src
 Click on Run menu option and select run as JUnit Tests
+
+Improvements:
+
+The project can build to be an Maven project.
+It can be made for more test coverage using automating other functionalities like minutes and hours tests using data driven.
