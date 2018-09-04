@@ -35,11 +35,6 @@ public class StepDefs {
 		
 	}
 
-	@Then("^the welcome message is shown$")
-	public void the_welcome_message_is_shown() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Welcome messgae");
-	}
 
 	@Given("^I am on the Home Page$")
 	public void i_am_on_the_Home_page() throws Throwable {
@@ -47,18 +42,6 @@ public class StepDefs {
 		timerHomepage.launchBrowser();
 		timerHomepage.openTimerURL();		
 		System.out.println("I am on the Timer Home Page");
-	}
-
-	@When("^I validate the text box value$")
-	public void i_validate_the_text_box_value() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Hima6");
-	}
-
-	@Then("^I should see the default value$")
-	public void i_should_see_the_default_value() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Hima7");
 	}
 
 
@@ -103,4 +86,13 @@ public class StepDefs {
 		System.out.println("Test Is successfull");
 	    timerHomepage.closethebrowser();
 	}
+	
+	@Then("^I validate for (\\d+) timer run$")
+	public void i_validate_during_the_timer_run(int arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    timerHomepage.runTimer();
+	}
+
+	
+	
 }

@@ -19,9 +19,11 @@ When I validate after 25 seconds
 Then Timer should stop
 
 
-
-
-
-
+@test
+Scenario: Validate when timer is running
+Given I am on the Home Page
+And I enter the 25 in the text box
+When I click on Go Button
+Then I validate for 25 timer run
 
 
