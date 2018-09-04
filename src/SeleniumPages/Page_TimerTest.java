@@ -109,6 +109,7 @@ public void runTimer()
 
             String prevText = new String();
             String currText = new String();
+            int i = 25;
             FluentWait<WebDriver> Wait = new FluentWait<WebDriver>(driver);
             Wait.withTimeout(25, TimeUnit.SECONDS);
             Wait.pollingEvery(1, TimeUnit.MILLISECONDS);
@@ -136,6 +137,7 @@ public void runTimer()
             long timeLapsed = System.currentTimeMillis();
             while(driver.findElement(By.id("progressText")).isDisplayed())
             {   
+            	
             	long loopTimeStart =  System.currentTimeMillis();
             	currText = driver.findElement(By.id("progressText")).getText();
             	//System.out.println(currText);
@@ -152,14 +154,25 @@ public void runTimer()
 
                        long changeTime = System.currentTimeMillis();
                          System.out.println(currText);
-                         System.out.println("Time Lapsed : " + (changeTime - timeLapsed) );              
+                         System.out.println("Time Lapsed : " + (changeTime - timeLapsed) );   
+                         
+                         if (currText.contains(i + "second"))                        	 
+                         {
+                        	 System.out.println("Current counter matches: "+ currText +" : "+ i + "seconds");
+                        	 
+                         }
+                         else
+                         {
+                        	 System.out.println("Current counter does not matches: "+ currText +" : "+ i + "seconds");
+                         }
                                               
                         //Assert.assertTrue("Test failed", Math.abs(1000 - (changeTime - timeLapsed)) < 50);
                          
                          timeLapsed = changeTime;        
                          prevText = currText;                
                          long loopTimeEnds =  System.currentTimeMillis();
-                         System.out.println("Loop time : " + (loopTimeStart - loopTimeEnds ) );    
+                         System.out.println("Loop time : " + (loopTimeStart - loopTimeEnds ) ); 
+                         i = i-1;
                    }
             }
             long endTime = System.currentTimeMillis();
