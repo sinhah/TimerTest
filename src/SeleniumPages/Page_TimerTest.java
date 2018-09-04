@@ -38,7 +38,7 @@ public class Page_TimerTest extends Page_BasePage{
 		if(driver.findElement(By.id("start_a_timer")).isDisplayed()) {
 			System.out.println("Timer text box is displayed");
 		} else {
-			System.out.println("Timer text box is NOT displayed");
+			System.out.println("Timer text box is not displayed");
 		}
 	}
 	
@@ -61,13 +61,6 @@ public class Page_TimerTest extends Page_BasePage{
 		driver.findElement(By.id("timergo")).click();
 	}
 	
-	public void checkImFeelingLuckyButtonIsDisplayed() {
-		if(driver.findElement(By.name("btnI")).isDisplayed()) {
-			System.out.println("I'm Feeling Lucky button is displayed");
-		} else {
-			System.out.println("I'm Feeling Lucky button is NOT displayed");
-		}
-	}	
 	
 	public void welcomemessage(String title) {
 	    String title2  = driver.getTitle();
@@ -79,14 +72,7 @@ public class Page_TimerTest extends Page_BasePage{
 	
 	public void validatetimertun(int time) {		
 		
-		//driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
-		//System.out.println(time);
-		//Alert simpleAlert = driver.switchTo().alert();
-		//String alertText = simpleAlert.getText();
-		//System.out.println("Alert text is " + alertText);
-		//simpleAlert.accept();
-		
-		
+			
 		try {
 		   WebDriverWait wait = new WebDriverWait(driver, time);
 		    wait.until(ExpectedConditions.alertIsPresent());
