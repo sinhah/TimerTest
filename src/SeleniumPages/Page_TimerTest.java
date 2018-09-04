@@ -173,7 +173,7 @@ public void runTimer()
             
             if ((startTime - endTime ) < 2500)
             {
-            	System.out.println("Test Failes as Total tme lapsed is less than 2500");
+            	System.out.println("Test Failes as Total time lapsed is less than 2500");
             }
       }
      closethebrowser();
